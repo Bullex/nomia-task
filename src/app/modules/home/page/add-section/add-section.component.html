@@ -1,0 +1,30 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>Добавить категорию</span>
+    <span class="example-spacer"></span>
+    <button mat-button [routerLink]="['']">Отмена</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<form (submit)="save()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Название</mat-label>
+    <input matInput placeholder="Введите название категории" [formControl]="nameFormControl" [(ngModel)]="name">
+    <mat-error *ngIf="nameFormControl.hasError('required')">
+      <strong>Поле необходимо заполнить</strong>
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Раздел</mat-label>
+    <mat-select [formControl]="sectionFormControl" [(ngModel)]="section">
+      <mat-option *ngFor="let section of sections" [value]="section">
+        {{section.name}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="sectionFormControl.hasError('required')">
+      <strong>Поле необходимо заполнить</strong>
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary">Сохранить</button>
+</form>

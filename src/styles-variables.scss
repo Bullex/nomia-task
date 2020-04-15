@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+
+$fa-font-path: '../node_modules/@fortawesome/fontawesome-free-webfonts/webfonts';
+
+$link-hover-decoration: none;
+$label-margin-bottom: 0;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$my-light-primary: mat-palette($mat-grey, 200, 500, 300);
+$my-light-accent: mat-palette($mat-brown, 200);
+$my-light-warn: mat-palette($mat-deep-orange, 200);
+
+$my-light-theme: mat-light-theme(
+    $my-light-primary,
+    $my-light-accent,
+    $my-light-warn
+);
